@@ -1,49 +1,1231 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vipul & Abhya | Royal Wedding Invitation</title>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Italiana&family=Montserrat:wght@300;400;500&family=Mrs+Saint+Delafield&display=swap");
-    :root{--ivory:#f5efe3;--paper:#eadfc9;--gold:#c29a4b;--gold2:#e2c47b;--emerald:#102d27;--rose:#b77b78;--ink:#29251f;--serif:"Cormorant Garamond",serif;--display:"Italiana",serif;--sans:"Montserrat",sans-serif;--script:"Mrs Saint Delafield",cursive}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--serif)}button,input,select,textarea{font:inherit}.progress{position:fixed;z-index:50;top:0;left:0;height:2px;width:0;background:var(--gold2)}
-    .section{min-height:100vh;padding:110px 7vw;position:relative;overflow:hidden}.eyebrow{margin:0 0 16px;color:var(--gold);font:500 10px/1.5 var(--sans);letter-spacing:.38em;text-transform:uppercase}.heading{max-width:760px;margin:0 auto 62px;text-align:center}.heading h2{margin:0;font:400 clamp(42px,6vw,78px)/1.05 var(--display)}.heading p:last-child{font-size:19px;font-style:italic;color:#6d6255}.flourish{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto;color:var(--gold)}.flourish:before,.flourish:after{content:"";width:55px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.flourish:after{transform:rotate(180deg)}
-    .hero{height:100vh;min-height:680px;position:relative;overflow:hidden;background:#071612}.palace,.farewell:before{position:absolute;inset:0;background:url("assets/palace-gates.png") center/cover no-repeat;transform:scale(1.03)}.vignette{position:absolute;inset:0;z-index:1;background:radial-gradient(circle at center,transparent 10%,rgba(2,11,9,.3) 60%,rgba(2,9,7,.82)),linear-gradient(0deg,rgba(2,9,7,.72),transparent 45%)}.door{position:absolute;z-index:3;top:0;width:50.1%;height:100%;transition:transform 2s cubic-bezier(.65,0,.35,1);background:linear-gradient(90deg,rgba(13,25,20,.28),rgba(92,64,27,.14));backdrop-filter:brightness(.52) saturate(.85)}.door.left{left:0;transform-origin:left;border-right:2px solid rgba(225,189,101,.3)}.door.right{right:0;transform-origin:right;border-left:2px solid rgba(225,189,101,.3)}.entered .door.left{transform:perspective(1200px) rotateY(-100deg)}.entered .door.right{transform:perspective(1200px) rotateY(100deg)}
-    .hero-copy{position:absolute;z-index:5;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:30px;transition:opacity 1s,transform 1s}.entered .hero-copy{opacity:0;transform:scale(1.12)}.seal{width:104px;height:104px;border-radius:50%;display:flex;align-items:center;justify-content:center;gap:5px;color:#4b3518;background:radial-gradient(circle at 35% 25%,#f0d58e,#bd8431 58%,#7f541c);border:2px solid #e7c779;box-shadow:0 0 45px rgba(218,178,84,.4);font:29px var(--display)}.seal i{font:34px var(--script)}.hero-copy p{color:var(--gold2);font:400 9px var(--sans);letter-spacing:.55em;margin:28px 0 18px}.hero-copy h1{margin:0 0 34px;font:italic 400 clamp(30px,4.4vw,62px)/1.16 var(--serif);text-shadow:0 2px 20px #000}.gold-btn{border:1px solid var(--gold2);padding:17px 25px;color:white;background:rgba(128,86,29,.35);text-transform:uppercase;letter-spacing:.25em;font:500 9px var(--sans);cursor:pointer}.hero-copy small{margin-top:24px;font:9px var(--sans);letter-spacing:.45em;color:rgba(255,255,255,.74)}
-    .hall{display:grid;place-items:center;background:radial-gradient(ellipse at center,#3d5749,#16342b 50%,#0b221d)}.scroll{width:min(800px,90vw);position:relative;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35));text-align:center}.scroll>div{padding:82px 56px;background-color:var(--paper);background-image:radial-gradient(#9c815c .55px,transparent .7px);background-size:5px 5px;border:1px solid #bd9b5e}.scroll h2{margin:18px 0;color:#8e6329;font:400 clamp(70px,10vw,115px)/.85 var(--script)}.scroll h2 em{color:var(--rose);font-size:.55em}.scroll h3{font-size:clamp(22px,3vw,30px);font-weight:500;margin:12px 0}.blessings{text-transform:uppercase;letter-spacing:.3em;font:9px var(--sans)}.request{margin-top:30px;font-size:19px;font-style:italic;line-height:1.6}.rod{position:absolute;left:-24px;right:-24px;height:22px;border-radius:50%;background:linear-gradient(#e3c476,#8d6124 60%,#deb968)}.rod.top{top:-9px}.rod.bottom{bottom:-9px}
-    .calendar,.family,.rsvp{background:linear-gradient(130deg,#f7f1e6,#ddd1b9)}.calendar-card{position:relative;display:block;width:min(500px,88vw);height:440px;margin:auto;border:0;background:transparent;perspective:1400px;cursor:pointer}.calendar-front,.calendar-back{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid #c29a4b;background:#f1e5cd;backface-visibility:hidden;transform-origin:left;transition:transform 1.2s}.calendar-front{z-index:2}.calendar-card.open .calendar-front{transform:rotateY(-170deg)}.calendar-front b{width:125px;height:125px;display:grid;place-items:center;border:double 4px var(--gold);border-radius:50%;color:var(--gold);font:35px var(--display)}.calendar-front p,.calendar-back small{font:9px var(--sans);letter-spacing:.35em;text-transform:uppercase;color:var(--gold)}.calendar-back p{color:var(--gold);font:10px var(--sans);letter-spacing:.45em}.calendar-back strong{color:var(--emerald);font:140px/1 var(--display)}.calendar-back span{font:24px var(--display);letter-spacing:.25em}
-    .story,.itinerary,.countdown{background:var(--emerald);color:var(--ivory)}.story .heading p:last-child,.itinerary .heading p:last-child,.countdown .heading p:last-child{color:rgba(255,255,255,.7)}.memory-grid,.family-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1040px;margin:auto}.memory-grid article{min-height:330px;padding:42px;border:1px solid rgba(226,196,123,.45);background:rgba(255,255,255,.05)}.memory-grid span{color:var(--gold);font:42px var(--display)}.memory-grid h3{font:34px var(--display);margin:20px 0}.memory-grid p{color:rgba(255,255,255,.68);line-height:1.6}.family-grid{grid-template-columns:repeat(2,minmax(0,340px));justify-content:center;text-align:center}.portrait>div{aspect-ratio:.78;display:grid;place-items:end center;padding:28px;border:14px solid #9e742f;background:radial-gradient(ellipse at 50% 35%,#d0a989 0 8%,transparent 8.5%),radial-gradient(ellipse at 50% 63%,#694d40 0 25%,transparent 25.5%),linear-gradient(145deg,#334d42,#182f29);box-shadow:0 20px 45px rgba(59,43,20,.25);color:var(--gold2);font:11px var(--sans);letter-spacing:.35em}.portrait h3{margin:8px 0;font:32px var(--display)}.portrait p,.portrait small{color:var(--gold);font:9px var(--sans);letter-spacing:.25em;text-transform:uppercase}
-    .tabs{display:flex;max-width:920px;margin:0 auto 45px;border-bottom:1px solid rgba(226,196,123,.3)}.tabs button{flex:1;padding:16px;color:rgba(255,255,255,.65);border:0;border-bottom:2px solid transparent;background:none;font:20px var(--display);cursor:pointer}.tabs span{display:block;font:9px var(--sans);letter-spacing:.18em;text-transform:uppercase}.tabs .active{color:white;border-color:var(--gold)}.event-panel{display:grid;grid-template-columns:1fr 1fr;max-width:1000px;min-height:520px;margin:auto;box-shadow:0 25px 70px rgba(0,0,0,.35)}.event-art{display:grid;place-items:center;color:var(--gold2);font-size:90px;background:radial-gradient(circle,rgba(221,183,94,.42),transparent 25%),rgba(255,255,255,.06)}.event-copy{padding:62px 52px;text-align:center;color:var(--ink);background:#f1e8d7}.event-copy h3{margin:0;font:46px var(--display)}.event-copy p:not(.eyebrow){font-size:18px}.event-copy b{display:block;color:var(--gold);font:8px var(--sans);letter-spacing:.3em;text-transform:uppercase}
-    .venues{background:#f1eadf}.venue{display:grid;grid-template-columns:1.25fr 1fr;max-width:1060px;min-height:420px;margin:0 auto 55px;background:#fff;box-shadow:0 25px 55px rgba(75,60,37,.12)}.venue:nth-of-type(3){grid-template-columns:1fr 1.25fr}.venue:nth-of-type(3)>div{order:2}.venue>div{background:linear-gradient(15deg,rgba(12,42,34,.7),transparent),url("assets/palace-gates.png") center/cover}.venue section{padding:62px 48px}.venue h3{margin:0;font:44px var(--display)}.venue h4{color:var(--gold);font:italic 23px var(--serif)}.venue a{color:var(--emerald);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:8px;font:9px var(--sans);letter-spacing:.25em;text-transform:uppercase}
-    .clock{width:240px;height:240px;display:grid;place-items:center;margin:auto;border:2px solid var(--gold);border-radius:50%;color:var(--gold2);font-size:60px;box-shadow:inset 0 0 0 14px #153329}.time{display:flex;justify-content:center;margin-top:45px}.time p{min-width:120px;border-right:1px solid rgba(226,196,123,.3);text-align:center}.time p:last-child{border:0}.time strong{display:block;color:var(--gold2);font:45px var(--display)}.time span{font:8px var(--sans);letter-spacing:.25em;text-transform:uppercase}.rsvp form{max-width:760px;margin:auto;padding:70px;background:#f7f0e3;border:1px solid #c09a51;box-shadow:0 30px 65px rgba(61,47,27,.2)}.rsvp input,.rsvp select,.rsvp textarea{width:100%;margin-bottom:24px;padding:13px 0;border:0;border-bottom:1px solid #c9b384;background:transparent;outline:none;font-size:18px}.rsvp textarea{min-height:110px}.rsvp button{display:block;margin:20px auto 0;color:var(--emerald);background:transparent}.success{text-align:center;font:36px var(--display)}
-    .farewell{display:grid;place-items:center;color:white;text-align:center}.farewell:before{content:"";filter:brightness(.32) saturate(.8)}.farewell:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,14,11,.86),transparent 65%)}.farewell>div{position:relative;z-index:2}.farewell h2{font:italic 400 clamp(35px,5vw,68px)/1.2 var(--serif)}.sign{color:var(--gold2);font:72px var(--script)}
-    @media(max-width:800px){.section{padding:88px 22px}.memory-grid,.family-grid,.event-panel,.venue,.venue:nth-of-type(3){grid-template-columns:1fr}.venue:nth-of-type(3)>div{order:0}.venue>div{min-height:300px}.time p{min-width:auto;padding:0 10px}.time strong{font-size:30px}.scroll>div,.event-copy,.rsvp form{padding:55px 26px}}
-  </style>
-</head>
-<body>
-  <div class="progress" id="progress"></div>
-  <section class="hero" id="home">
-    <div class="palace"></div><div class="vignette"></div><div class="door left"></div><div class="door right"></div>
-    <div class="hero-copy"><div class="seal"><span>V</span><i>&</i><span>A</span></div><p>A PRIVATE INVITATION</p><h1>You have been invited<br>to witness a celebration of love.</h1><button class="gold-btn" id="enter">Enter The Palace →</button><small>21 · 09 · 2026</small></div>
-  </section>
-  <section class="section hall" id="hall"><article class="scroll"><span class="rod top"></span><div><p class="eyebrow">With Joy In Our Hearts</p><h2>Vipul <em>&</em> Abhya</h2><div class="flourish">✦</div><p class="blessings">With the blessings of</p><h3>Mrs. Geeta & Mr. Rajinder Nagpal</h3><p>and</p><h3>Mrs. Dolly & Mr. Pradeep Sood</h3><p class="request">request the pleasure of your company<br>to celebrate their union.</p></div><span class="rod bottom"></span></article></section>
-  <section class="section calendar"><div class="heading"><p class="eyebrow">Save The Date</p><h2>The Royal Calendar</h2><div class="flourish">✦</div><p>Turn the page and mark the day our forever begins.</p></div><button class="calendar-card" id="calendar"><div class="calendar-back"><p>SEPTEMBER</p><strong>21</strong><span>2026</span><small>VIPUL & ABHYA</small></div><div class="calendar-front"><b>VA</b><p>Turn the page</p></div></button></section>
-  <section class="section story"><div class="heading"><p class="eyebrow">The Courtyard Of Memories</p><h2>Our Story</h2><div class="flourish">✦</div><p>A walk through little moments that became a lifetime promise.</p></div><div class="memory-grid"><article><span>01</span><h3>The Beginning</h3><p>A quiet hello became a conversation neither wanted to end.</p></article><article><span>02</span><h3>The Journey</h3><p>Ordinary days turned into cherished memories.</p></article><article><span>03</span><h3>The Promise</h3><p>With their families beside them, they chose forever.</p></article></div></section>
-  <section class="section family"><div class="heading"><p class="eyebrow">Two Houses, One Family</p><h2>The Royal Families</h2><div class="flourish">✦</div></div><div class="family-grid"><article class="portrait"><div>G · R</div><p>Groom's Family</p><h3>Geeta & Rajinder</h3><small>The Nagpal Family</small></article><article class="portrait"><div>D · P</div><p>Bride's Family</p><h3>Dolly & Pradeep</h3><small>The Sood Family</small></article></div></section>
-  <section class="section itinerary"><div class="heading"><p class="eyebrow">The Royal Celebration</p><h2>Three Chapters. One Grand Story.</h2><div class="flourish">✦</div></div><div class="tabs"><button class="active" data-event="0">01<span>Haldi Ceremony</span></button><button data-event="1">02<span>Engagement Ceremony</span></button><button data-event="2">03<span>Wedding Ceremony</span></button></div><article class="event-panel"><div class="event-art">♕</div><div class="event-copy" id="eventCopy"></div></article></section>
-  <section class="section venues"><div class="heading"><p class="eyebrow">Your Journey Awaits</p><h2>The Royal Destinations</h2><div class="flourish">✦</div></div><article class="venue"><div></div><section><p class="eyebrow">Celebration Venue</p><h3>Sunpark Hotel</h3><h4>Zirakpur</h4><a href="https://www.google.com/maps/search/?api=1&query=Sunpark%20Hotel%20Zirakpur" target="_blank">Get Directions ↗</a></section></article><article class="venue"><div></div><section><p class="eyebrow">Celebration Venue</p><h3>Mystic Resort</h3><h4>Zirakpur</h4><a href="https://www.google.com/maps/search/?api=1&query=Mystic%20Resort%20Zirakpur" target="_blank">Get Directions ↗</a></section></article></section>
-  <section class="section countdown"><div class="heading"><p class="eyebrow">Until The Palace Doors Open</p><h2>The Grand Countdown</h2><div class="flourish">✦</div></div><div class="clock">♕</div><div class="time" id="time"></div></section>
-  <section class="section rsvp"><form id="rsvp"><div class="heading"><p class="eyebrow">The Royal Guest Registry</p><h2>Kindly Reply</h2><div class="flourish">✦</div><p>We await the honour of your presence.</p></div><div id="formFields"><input required placeholder="Guest Name"><input required placeholder="Contact Number"><select><option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option></select><textarea placeholder="Leave your blessings..."></textarea><button class="gold-btn">Seal My Response ✦</button></div></form></section>
-  <section class="section farewell"><div><p class="eyebrow">A NIGHT TO REMEMBER</p><h2>Your presence will make our<br>celebration truly complete.</h2><div class="flourish">✦</div><p class="sign">Vipul & Abhya</p></div></section>
-  <script>
-    const events=[["Haldi Ceremony","20 September 2026","Day Function","Sunpark Hotel, Zirakpur","Marigold Courtyard"],["Engagement Ceremony","20 September 2026","Night Function","Sunpark Hotel, Zirakpur","Crystal Ballroom"],["Wedding Ceremony","21 September 2026","Auspicious Evening","Mystic Resort, Zirakpur","Royal Palace Celebration"]];
-    const eventCopy=document.getElementById("eventCopy");function setEvent(i){const e=events[i];eventCopy.innerHTML=`<p class="eyebrow">${e[4]}</p><h3>${e[0]}</h3><div class="flourish">✦</div><p><b>Date</b>${e[1]}</p><p><b>Time</b>${e[2]}</p><p><b>Venue</b>${e[3]}</p>`;document.querySelectorAll(".tabs button").forEach((b,n)=>b.classList.toggle("active",n==i))}setEvent(0);
-    document.getElementById("enter").onclick=()=>{document.querySelector(".hero").classList.add("entered");setTimeout(()=>document.getElementById("hall").scrollIntoView({behavior:"smooth"}),1800)};
-    document.getElementById("calendar").onclick=e=>e.currentTarget.classList.add("open");document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>setEvent(b.dataset.event));
-    function tick(){const target=new Date("2026-09-21T19:00:00+05:30").getTime(),d=Math.max(0,target-Date.now()),vals=[Math.floor(d/86400000),Math.floor(d/3600000)%24,Math.floor(d/60000)%60,Math.floor(d/1000)%60],labs=["Days","Hours","Minutes","Seconds"];document.getElementById("time").innerHTML=vals.map((v,i)=>`<p><strong>${String(v).padStart(2,"0")}</strong><span>${labs[i]}</span></p>`).join("")}tick();setInterval(tick,1000);
-    document.getElementById("rsvp").onsubmit=e=>{e.preventDefault();document.getElementById("formFields").innerHTML='<h3 class="success">Your response has been sealed.</h3>'};
-    addEventListener("scroll",()=>{document.getElementById("progress").style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+"%"});
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vipul & Abhya | Royal Wedding Invitation</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Italiana&family=Montserrat:wght@300;400;500&family=Mrs+Saint+Delafield&display=swap");
+      :root {
+        --ivory: #f5efe3;
+        --paper: #eadfc9;
+        --gold: #5f3a07;
+        --gold2: #ffd86b;
+        --emerald: #102d27;
+        --rose: #b77b78;
+        --ink: #29251f;
+        --serif: "Cormorant Garamond", serif;
+        --display: "Italiana", serif;
+        --sans: "Montserrat", sans-serif;
+        --script: "Mrs Saint Delafield", cursive;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--ivory);
+        color: var(--ink);
+        font-family: var(--serif);
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      .progress {
+        position: fixed;
+        z-index: 50;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: var(--gold2);
+      }
+      .section {
+        min-height: 100vh;
+        padding: 110px 7vw;
+        position: relative;
+        overflow: hidden;
+      }
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--gold);
+        font: 700 10px/1.5 var(--sans);
+        letter-spacing: 0.38em;
+        text-transform: uppercase;
+      }
+      .heading {
+        max-width: 760px;
+        margin: 0 auto 62px;
+        text-align: center;
+      }
+      .heading h2 {
+        margin: 0;
+        font: 400 clamp(42px, 6vw, 78px)/1.05 var(--display);
+      }
+      .heading p:last-child {
+        font-size: 19px;
+        font-style: italic;
+        color: #6d6255;
+      }
+      .flourish {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin: 22px auto;
+        color: var(--gold);
+      }
+      .flourish:before,
+      .flourish:after {
+        content: "";
+        width: 55px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold));
+      }
+      .flourish:after {
+        transform: rotate(180deg);
+      }
+      .hero {
+        height: 100vh;
+        min-height: 680px;
+        position: relative;
+        overflow: hidden;
+        background: #071612;
+      }
+      .palace,
+      .farewell:before {
+        position: absolute;
+        inset: 0;
+        background: url("assets/palace-gates.png") center/cover no-repeat;
+        transform: scale(1.03);
+      }
+      .vignette {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+          radial-gradient(
+            circle at center,
+            transparent 10%,
+            rgba(2, 11, 9, 0.3) 60%,
+            rgba(2, 9, 7, 0.82)
+          ),
+          linear-gradient(0deg, rgba(2, 9, 7, 0.72), transparent 45%);
+      }
+      .door {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        width: 50.1%;
+        height: 100%;
+        transition: transform 2s cubic-bezier(0.65, 0, 0.35, 1);
+        background: linear-gradient(
+          90deg,
+          rgba(13, 25, 20, 0.28),
+          rgba(92, 64, 27, 0.14)
+        );
+        backdrop-filter: brightness(0.52) saturate(0.85);
+      }
+      .door.left {
+        left: 0;
+        transform-origin: left;
+        border-right: 2px solid rgba(225, 189, 101, 0.3);
+      }
+      .door.right {
+        right: 0;
+        transform-origin: right;
+        border-left: 2px solid rgba(225, 189, 101, 0.3);
+      }
+      .entered .door.left {
+        transform: perspective(1200px) rotateY(-100deg);
+      }
+      .entered .door.right {
+        transform: perspective(1200px) rotateY(100deg);
+      }
+      .hero-copy {
+        position: absolute;
+        z-index: 5;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        padding: 30px;
+        transition:
+          opacity 1s,
+          transform 1s;
+      }
+      .entered .hero-copy {
+        opacity: 0;
+        transform: scale(1.12);
+      }
+      .seal {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background: radial-gradient(
+          circle at 35% 25%,
+          #f7df9a,
+          #c69035 60%,
+          #7f541c
+        );
+        border: 2px solid #e7c779;
+        box-shadow:
+          0 0 20px rgba(231, 199, 121, 0.5),
+          inset 0 2px 10px rgba(255, 255, 255, 0.2);
+      }
+
+      .seal img {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        transform: translate(-1px); /* adjust this if needed */
+      }
+      .hero-copy p {
+        color: var(--gold2);
+        font: 400 9px var(--sans);
+        letter-spacing: 0.55em;
+        margin: 28px 0 18px;
+      }
+      .hero-copy h1 {
+        margin: 0 0 34px;
+        font: italic 400 clamp(30px, 4.4vw, 62px)/1.16 var(--serif);
+        text-shadow: 0 2px 20px #000;
+      }
+      .gold-btn {
+        border: 1px solid var(--gold2);
+        padding: 17px 25px;
+        color: white;
+        background: rgba(128, 86, 29, 0.35);
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        font: 500 9px var(--sans);
+        cursor: pointer;
+      }
+      .hero-copy small {
+        margin-top: 24px;
+        font: 9px var(--sans);
+        letter-spacing: 0.45em;
+        color: rgba(255, 255, 255, 0.74);
+      }
+      .hall {
+        display: grid;
+        place-items: center;
+        background: radial-gradient(
+          ellipse at center,
+          #3d5749,
+          #16342b 50%,
+          #0b221d
+        );
+      }
+      .scroll {
+        width: min(800px, 90vw);
+        position: relative;
+        filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.35));
+        text-align: center;
+      }
+      .scroll > div {
+        padding: 82px 56px;
+        background-color: var(--paper);
+        background-image: radial-gradient(#9c815c 0.55px, transparent 0.7px);
+        background-size: 5px 5px;
+        border: 1px solid #bd9b5e;
+      }
+      .scroll h2 {
+        margin: 18px 0;
+        color: #8e6329;
+        font: 400 clamp(70px, 10vw, 115px)/0.85 var(--script);
+      }
+      .scroll h2 em {
+        color: var(--rose);
+        font-size: 0.55em;
+      }
+      .scroll h3 {
+        font-size: clamp(22px, 3vw, 30px);
+        font-weight: 500;
+        margin: 12px 0;
+      }
+      .blessings {
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        font: 9px var(--sans);
+      }
+      .request {
+        margin-top: 30px;
+        font-size: 19px;
+        font-style: italic;
+        line-height: 1.6;
+      }
+      .rod {
+        position: absolute;
+        left: -24px;
+        right: -24px;
+        height: 22px;
+        border-radius: 50%;
+        background: linear-gradient(#e3c476, #8d6124 60%, #deb968);
+      }
+      .rod.top {
+        top: -9px;
+      }
+      .rod.bottom {
+        bottom: -9px;
+      }
+      .calendar,
+      .family {
+        background: linear-gradient(130deg, #f7f1e6, #ddd1b9);
+      }
+      .calendar-card {
+        position: relative;
+        display: block;
+        width: min(500px, 88vw);
+        height: 440px;
+        margin: auto;
+        border: 0;
+        background: transparent;
+        perspective: 1400px;
+        cursor: pointer;
+      }
+      .calendar-front,
+      .calendar-back {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #c29a4b;
+        background: #f1e5cd;
+        backface-visibility: hidden;
+        transform-origin: left;
+        transition: transform 1.2s;
+      }
+      .calendar-front {
+        z-index: 2;
+      }
+      .calendar-card.open .calendar-front {
+        transform: rotateY(-170deg);
+      }
+      .calendar-front b {
+        width: 125px;
+        height: 125px;
+        display: grid;
+        place-items: center;
+        border: double 4px var(--gold);
+        border-radius: 50%;
+        color: var(--gold);
+        font: 35px var(--display);
+      }
+      .calendar-front p,
+      .calendar-back small {
+        font: 9px var(--sans);
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .calendar-back p {
+        color: var(--gold);
+        font: 10px var(--sans);
+        letter-spacing: 0.45em;
+      }
+      .calendar-back strong {
+        color: var(--emerald);
+        font: 140px/1 var(--display);
+      }
+      .calendar-back span {
+        font: 24px var(--display);
+        letter-spacing: 0.25em;
+      }
+      .story,
+      .itinerary,
+      .countdown {
+        background: var(--emerald);
+        color: var(--ivory);
+      }
+      .story > .heading .eyebrow,
+      .itinerary > .heading .eyebrow,
+      .countdown .eyebrow,
+      .farewell .eyebrow {
+        color: var(--gold2);
+      }
+      .story > .heading .flourish,
+      .itinerary > .heading .flourish,
+      .countdown .flourish,
+      .farewell .flourish {
+        color: var(--gold2);
+      }
+      .story > .heading .flourish:before,
+      .story > .heading .flourish:after,
+      .itinerary > .heading .flourish:before,
+      .itinerary > .heading .flourish:after,
+      .countdown .flourish:before,
+      .countdown .flourish:after,
+      .farewell .flourish:before,
+      .farewell .flourish:after {
+        background: linear-gradient(90deg, transparent, var(--gold2));
+      }
+      .story .heading p:last-child,
+      .itinerary .heading p:last-child,
+      .countdown .heading p:last-child {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .memory-grid,
+      .family-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        max-width: 1040px;
+        margin: auto;
+      }
+      .memory-grid article {
+        min-height: 330px;
+        padding: 42px;
+        border: 1px solid rgba(255, 216, 107, 0.55);
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .memory-grid span {
+        color: var(--gold2);
+        font: 42px var(--display);
+      }
+      .memory-grid h3 {
+        font: 34px var(--display);
+        margin: 20px 0;
+      }
+      .memory-grid p {
+        color: rgba(255, 255, 255, 0.68);
+        line-height: 1.6;
+      }
+      .family-grid {
+        grid-template-columns: repeat(2, minmax(0, 420px));
+        justify-content: center;
+        text-align: center;
+      }
+      .family-card {
+        padding: 48px 42px;
+        background: rgba(255, 255, 255, 0.38);
+        border: 1px solid rgba(194, 154, 75, 0.45);
+        box-shadow: 0 22px 48px rgba(75, 60, 37, 0.12);
+      }
+      .family-card > p {
+        margin: 0 0 22px;
+        color: var(--gold);
+        font: 700 9px var(--sans);
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+      .family-card h3 {
+        margin: 0 0 8px;
+        font: 32px var(--display);
+      }
+      .family-card .parents,
+      .family-card .sister {
+        margin: 0;
+        color: #4f4538;
+        font: 21px/1.55 var(--serif);
+      }
+      .family-card .sister {
+        margin-top: 2px;
+      }
+      .family-card .sister b {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--gold);
+        font: 8px var(--sans);
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+      .events-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 26px;
+        max-width: 1180px;
+        margin: auto;
+      }
+      .event-card {
+        overflow: hidden;
+        background: #f1e8d7;
+        color: var(--ink);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      .event-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.38);
+      }
+      .event-photo {
+        position: relative;
+        height: 390px;
+        overflow: hidden;
+        background: #0b221d;
+      }
+      .event-photo:after {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        border: 1px solid rgba(255, 213, 111, 0.75);
+        pointer-events: none;
+      }
+      .event-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.7s ease;
+      }
+      .event-card:hover .event-photo img {
+        transform: scale(1.06);
+      }
+      .event-info {
+        padding: 34px 28px;
+        text-align: center;
+      }
+      .event-info h3 {
+        margin: 0 0 18px;
+        font: 38px var(--display);
+      }
+      .event-info p:not(.eyebrow) {
+        font-size: 17px;
+        margin: 12px 0;
+      }
+      .event-info b {
+        display: block;
+        color: var(--gold);
+        font: 8px var(--sans);
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+      }
+      .venues {
+        background: #f1eadf;
+      }
+      .venue {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        max-width: 1060px;
+        min-height: 420px;
+        margin: 0 auto 55px;
+        background: #fff;
+        box-shadow: 0 25px 55px rgba(75, 60, 37, 0.12);
+      }
+      .venue:nth-of-type(3) {
+        grid-template-columns: 1fr 1.25fr;
+      }
+      .venue:nth-of-type(3) > div {
+        order: 2;
+      }
+      .venue > div {
+        background: linear-gradient(15deg, rgba(12, 42, 34, 0.7), transparent);
+        background-size: cover;
+        background-position: center;
+      }
+      .venue-sunpark {
+        background-image:
+          linear-gradient(15deg, rgba(12, 42, 34, 0.7), transparent),
+          url("assets/gallery/facade.jpg") !important;
+      }
+      .venue-mystic {
+        background-image:
+          linear-gradient(15deg, rgba(12, 42, 34, 0.7), transparent),
+          url("assets/gallery/mystic.jpg") !important;
+      }
+      .venue section {
+        padding: 62px 48px;
+      }
+      .venue h3 {
+        margin: 0;
+        font: 44px var(--display);
+      }
+      .venue h4 {
+        color: var(--gold);
+        font: italic 23px var(--serif);
+      }
+      .venue a {
+        color: var(--emerald);
+        text-decoration: none;
+        border-bottom: 1px solid var(--gold);
+        padding-bottom: 8px;
+        font: 9px var(--sans);
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+      .clock {
+        width: 240px;
+        height: 240px;
+        display: grid;
+        place-items: center;
+        margin: auto;
+        border: 2px solid var(--gold);
+        border-radius: 50%;
+        color: var(--gold2);
+        font-size: 60px;
+        box-shadow: inset 0 0 0 14px #153329;
+      }
+      .time {
+        display: flex;
+        justify-content: center;
+        margin-top: 45px;
+      }
+      .time p {
+        min-width: 120px;
+        border-right: 1px solid rgba(226, 196, 123, 0.3);
+        text-align: center;
+      }
+      .time p:last-child {
+        border: 0;
+      }
+      .time strong {
+        display: block;
+        color: var(--gold2);
+        font: 45px var(--display);
+      }
+      .time span {
+        font: 8px var(--sans);
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+      .rope-svg {
+        position: absolute;
+        width: 92%;
+        left: 4%;
+        height: 90px;
+        z-index: 1;
+      }
+
+      .rope1 {
+        top: 220px;
+      }
+
+      .rope2 {
+        top: 640px;
+      }
+
+      .rope-svg svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .rope-svg path {
+        fill: none;
+        stroke: #b88a43;
+        stroke-width: 5;
+        stroke-linecap: round;
+
+        filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.35));
+      }
+      .gallery-section {
+        position: relative;
+        padding: 120px 5%;
+        background: linear-gradient(180deg, #102d27, #173f37, #102d27);
+        overflow: hidden;
+      }
+
+      /* Decorative background */
+
+      .gallery-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 216, 107, 0.05),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 216, 107, 0.05),
+            transparent 25%
+          );
+        pointer-events: none;
+      }
+
+      /* Heading */
+
+      .gallery-section .heading {
+        text-align: center;
+        margin-bottom: 90px;
+      }
+
+      .gallery-section .heading h2 {
+        color: #f5efe3;
+        font-family: "Italiana", serif;
+        font-size: 70px;
+        margin: 10px 0;
+      }
+
+      .gallery-section .eyebrow {
+        color: #ffd86b;
+      }
+
+      .gallery-section .flourish {
+        color: #ffd86b;
+      }
+
+      /* Hanging ropes */
+
+      /* Rows */
+
+      .gallery-row {
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+        margin-bottom: 130px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .gallery-row.second {
+        margin-top: 60px;
+      }
+
+      /* Polaroid */
+
+      .photo {
+        position: relative;
+
+        width: 180px;
+        height: 220px;
+
+        background: #fff;
+        padding: 12px 12px 35px;
+
+        border-radius: 3px;
+
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+
+        transform-origin: top center;
+
+        animation: swing 6s ease-in-out infinite;
+
+        transition: 0.4s;
+      }
+
+      /* different angles */
+
+      .photo:nth-child(odd) {
+        transform: rotate(-3deg);
+      }
+
+      .photo:nth-child(even) {
+        transform: rotate(3deg);
+      }
+
+      .photo:hover {
+        transform: translateY(-12px) scale(1.07);
+
+        z-index: 10;
+      }
+
+      /* Image */
+
+      .photo img {
+        width: 100%;
+        height: 170px;
+
+        object-fit: cover;
+
+        display: block;
+
+        border-radius: 2px;
+      }
+
+      /* Wooden Clip */
+
+      .clip {
+        position: absolute;
+        width: 28px;
+        height: 40px;
+        left: 50%;
+        top: -36px;
+        transform: translateX(-50%);
+        z-index: 20;
+
+        background: linear-gradient(to right, #d8b16b, #b17b34, #d8b16b);
+        border-radius: 4px 4px 6px 6px;
+
+        box-shadow:
+          inset 0 2px 2px rgba(255, 255, 255, 0.25),
+          inset 0 -3px 4px rgba(0, 0, 0, 0.25),
+          0 3px 8px rgba(0, 0, 0, 0.35);
+      }
+
+      .clip::before {
+        content: "";
+        position: absolute;
+
+        left: 50%;
+        top: 6px;
+
+        width: 4px;
+        height: 18px;
+
+        background: #6d4a22;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      /* bottom jaw of clip */
+      .clip::after {
+        content: "";
+        position: absolute;
+        left: 4px;
+        right: 4px;
+        bottom: -4px;
+        height: 6px;
+
+        background: #a97537;
+        border-radius: 0 0 3px 3px;
+      }
+
+      /* String */
+
+      .photo::before {
+        content: "";
+        position: absolute;
+
+        width: 2px;
+        height: 36px;
+
+        background: #d2b078;
+
+        left: 50%;
+        top: -36px;
+
+        transform: translateX(-50%);
+
+        z-index: 5;
+      }
+
+      /* Swing animation */
+
+      @keyframes swing {
+        0% {
+          transform: rotate(-2deg);
+        }
+
+        50% {
+          transform: rotate(2deg);
+        }
+
+        100% {
+          transform: rotate(-2deg);
+        }
+      }
+
+      /* Fairy lights */
+
+      .gallery-section::after {
+        content: "";
+
+        position: absolute;
+
+        top: 220px;
+
+        left: 5%;
+
+        width: 90%;
+
+        height: 10px;
+
+        background: radial-gradient(circle, #ffd86b 2px, transparent 3px);
+
+        background-size: 55px 10px;
+
+        opacity: 0.9;
+      }
+
+      /* Responsive */
+
+      @media (max-width: 1100px) {
+        .gallery-row {
+          flex-wrap: wrap;
+
+          gap: 30px;
+        }
+
+        .rope {
+          display: none;
+        }
+
+        .gallery-section::after {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery-section {
+          padding: 90px 20px;
+        }
+
+        .gallery-section .heading h2 {
+          font-size: 48px;
+        }
+
+        .photo {
+          width: 150px;
+          height: 190px;
+        }
+
+        .photo img {
+          height: 145px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .gallery-row {
+          gap: 18px;
+        }
+
+        .photo {
+          width: 130px;
+          height: 165px;
+        }
+
+        .photo img {
+          height: 120px;
+        }
+      }
+      .farewell {
+        display: grid;
+        place-items: center;
+        color: white;
+        text-align: center;
+      }
+      .farewell:before {
+        content: "";
+        filter: brightness(0.32) saturate(0.8);
+      }
+      .farewell:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          0deg,
+          rgba(3, 14, 11, 0.86),
+          transparent 65%
+        );
+      }
+      .farewell > div {
+        position: relative;
+        z-index: 2;
+      }
+      .farewell h2 {
+        font: italic 400 clamp(35px, 5vw, 68px)/1.2 var(--serif);
+      }
+      .sign {
+        color: var(--gold2);
+        font: 72px var(--script);
+      }
+      @media (max-width: 900px) {
+        .events-grid {
+          grid-template-columns: 1fr;
+          max-width: 520px;
+        }
+        .event-photo {
+          height: 520px;
+        }
+      }
+      @media (max-width: 800px) {
+        .section {
+          padding: 88px 22px;
+        }
+        .memory-grid,
+        .family-grid,
+        .venue,
+        .venue:nth-of-type(3) {
+          grid-template-columns: 1fr;
+        }
+        .venue:nth-of-type(3) > div {
+          order: 0;
+        }
+        .venue > div {
+          min-height: 300px;
+        }
+        .time p {
+          min-width: auto;
+          padding: 0 10px;
+        }
+        .time strong {
+          font-size: 30px;
+        }
+        .scroll > div {
+          padding: 55px 26px;
+        }
+      }
+      @media (max-width: 520px) {
+        .event-photo {
+          height: 430px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress" id="progress"></div>
+    <section class="hero" id="home">
+      <div class="palace"></div>
+      <div class="vignette"></div>
+      <div class="door left"></div>
+      <div class="door right"></div>
+      <div class="hero-copy">
+        <div class="seal">
+          <img src="VA_final-Recovered.png" alt="VA Logo" />
+        </div>
+        <p>A PRIVATE INVITATION</p>
+        <h1>You have been invited<br />to witness a celebration of love.</h1>
+        <button class="gold-btn" id="enter">Enter The Palace →</button
+        ><small>21 · 09 · 2026</small>
+      </div>
+    </section>
+    <section class="section hall" id="hall">
+      <article class="scroll">
+        <span class="rod top"></span>
+        <div>
+          <p class="eyebrow">With Joy In Our Hearts</p>
+          <h2>Vipul <em>&</em> Abhya</h2>
+          <div class="flourish">✦</div>
+          <p class="blessings">With the blessings of</p>
+          <h3>Mrs. Geeta & Mr. Rajinder Nagpal</h3>
+          <p>and</p>
+          <h3>Mrs. Dolly & Mr. Pradeep Sood</h3>
+          <p class="request">
+            request the pleasure of your company<br />to celebrate their union.
+          </p>
+        </div>
+        <span class="rod bottom"></span>
+      </article>
+    </section>
+    <section class="section calendar">
+      <div class="heading">
+        <p class="eyebrow">Save The Date</p>
+        <h2>The Royal Calendar</h2>
+        <div class="flourish">✦</div>
+        <p>Turn the page and mark the day our forever begins.</p>
+      </div>
+      <button class="calendar-card" id="calendar">
+        <div class="calendar-back">
+          <p>SEPTEMBER</p>
+          <strong>21</strong><span>2026</span><small>VIPUL & ABHYA</small>
+        </div>
+        <div class="calendar-front">
+          <b>VA</b>
+          <p>Turn the page</p>
+        </div>
+      </button>
+    </section>
+    <section class="section countdown">
+      <div class="heading">
+        <p class="eyebrow">Until The Palace Doors Open</p>
+        <h2>The Grand Countdown</h2>
+        <div class="flourish">✦</div>
+      </div>
+      <div class="clock">♕</div>
+      <div class="time" id="time"></div>
+    </section>
+    <section class="section family">
+      <div class="heading">
+        <p class="eyebrow">Two Houses, One Family</p>
+        <h2>With Our Families</h2>
+        <div class="flourish">✦</div>
+      </div>
+      <div class="family-grid">
+        <article class="family-card">
+          <p>Groom's Family</p>
+          <h3>The Nagpal Family</h3>
+          <div class="parents">Mrs. Geeta Nagpal<br />Mr. Rajinder Nagpal</div>
+          <div class="sister">Ms. Mishthi Nagpal</div>
+        </article>
+        <article class="family-card">
+          <p>Bride's Family</p>
+          <h3>The Sood Family</h3>
+          <div class="parents">Mrs. Dolly Sood<br />Mr. Pradeep Sood</div>
+          <div class="sister">Ms. Sabhya Sood</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section itinerary">
+      <div class="heading">
+        <p class="eyebrow">The Royal Celebration</p>
+        <h2>Three Chapters. One Grand Story.</h2>
+        <div class="flourish">✦</div>
+        <p>All ceremonies at a glance.</p>
+      </div>
+      <div class="events-grid">
+        <article class="event-card">
+          <div class="event-photo">
+            <img src="assets/haldi.png" alt="Haldi Ceremony" />
+          </div>
+          <div class="event-info">
+            <p class="eyebrow">Marigold Courtyard</p>
+            <h3>Haldi Ceremony</h3>
+            <p><b>Date</b>20 September 2026</p>
+            <p><b>Time</b>1:30 PM</p>
+            <p><b>Venue</b>Sunpark Hotel, Zirakpur</p>
+          </div>
+        </article>
+        <article class="event-card">
+          <div class="event-photo">
+            <img src="assets/engagement.png" alt="Engagement Ceremony" />
+          </div>
+          <div class="event-info">
+            <p class="eyebrow">Crystal Ballroom</p>
+            <h3>Engagement Ceremony</h3>
+            <p><b>Date</b>20 September 2026</p>
+            <p><b>Time</b>8:00 PM</p>
+            <p><b>Venue</b>Sunpark Hotel, Zirakpur</p>
+          </div>
+        </article>
+        <article class="event-card">
+          <div class="event-photo">
+            <img src="assets/wedding.png" alt="Wedding Ceremony" />
+          </div>
+          <div class="event-info">
+            <p class="eyebrow">Royal Palace Celebration</p>
+            <h3>Wedding Ceremony</h3>
+            <p><b>Date</b>21 September 2026</p>
+            <p><b>Time</b>6:00 PM/p></p>
+            <p><b>Venue</b>Mystic Resort, Zirakpur</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="section venues">
+      <div class="heading">
+        <p class="eyebrow">Your Journey Awaits</p>
+        <h2>The Royal Destinations</h2>
+        <div class="flourish">✦</div>
+      </div>
+      <article class="venue">
+        <div class="venue-sunpark"></div>
+        <section>
+          <p class="eyebrow">Celebration Venue</p>
+          <h3>Sunpark Hotel</h3>
+          <h4>Zirakpur</h4>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Sunpark%20Hotel%20Zirakpur"
+            target="_blank"
+            >Get Directions ↗</a
+          >
+        </section>
+      </article>
+      <article class="venue">
+        <div class="venue-mystic"></div>
+        <section>
+          <p class="eyebrow">Celebration Venue</p>
+          <h3>Mystic Resort</h3>
+          <h4>Zirakpur</h4>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Mystic%20Resort%20Zirakpur"
+            target="_blank"
+            >Get Directions ↗</a
+          >
+        </section>
+      </article>
+    </section>
+    <section class="gallery-section" id="gallery">
+      <div class="heading">
+        <p class="eyebrow">Captured Forever</p>
+        <h2>Our Gallery</h2>
+        <div class="flourish">✦</div>
+      </div>
+
+      <!-- Row 1 -->
+
+      <div class="gallery-row">
+        <div class="photo">
+          <div class="clip"></div>
+          <img src="assets\gallery\IMG_8810.jpg" />
+        </div>
+
+        <div class="photo">
+          <div class="clip"></div>
+          <img src="assets\gallery\IMG_1533.jpg" />
+        </div>
+
+        <div class="photo">
+          <div class="clip"></div>
+          <img src="assets\gallery\IMG_1786.jpg" />
+        </div>
+
+        <!-- Row 2 -->
+
+        <div class="photo">
+          <div class="clip"></div>
+          <img src="assets\gallery\IMG_2377.jpg" />
+        </div>
+
+        <div class="photo">
+          <div class="clip"></div>
+          <img src="assets\gallery\IMG_2041.jpg" />
+        </div>
+
+        <div class="photo">
+          <div class="clip"></div>
+          <img
+            src="assets\gallery\1AC5C269-AB19-48B7-891A-4E04A39B4C33_1_105_c.jpeg"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="section farewell">
+      <div>
+        <p class="eyebrow">A NIGHT TO REMEMBER</p>
+        <h2>Your presence will make our<br />celebration truly complete.</h2>
+        <div class="flourish">✦</div>
+        <p class="sign">Vipul & Abhya</p>
+      </div>
+    </section>
+    <script>
+      document.getElementById("enter").onclick = () => {
+        document.querySelector(".hero").classList.add("entered");
+        setTimeout(
+          () =>
+            document
+              .getElementById("hall")
+              .scrollIntoView({ behavior: "smooth" }),
+          1800,
+        );
+      };
+      document.getElementById("calendar").onclick = (e) =>
+        e.currentTarget.classList.add("open");
+      function tick() {
+        const target = new Date("2026-09-21T19:00:00+05:30").getTime(),
+          d = Math.max(0, target - Date.now()),
+          vals = [
+            Math.floor(d / 86400000),
+            Math.floor(d / 3600000) % 24,
+            Math.floor(d / 60000) % 60,
+            Math.floor(d / 1000) % 60,
+          ],
+          labs = ["Days", "Hours", "Minutes", "Seconds"];
+        document.getElementById("time").innerHTML = vals
+          .map(
+            (v, i) =>
+              `<p><strong>${String(v).padStart(2, "0")}</strong><span>${labs[i]}</span></p>`,
+          )
+          .join("");
+      }
+      tick();
+      setInterval(tick, 1000);
+      addEventListener("scroll", () => {
+        document.getElementById("progress").style.width =
+          (scrollY / (document.body.scrollHeight - innerHeight)) * 100 + "%";
+      });
+    </script>
+  </body>
 </html>
