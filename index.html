@@ -1215,7 +1215,13 @@
           });
         }, 1800);
       });
-
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          music.pause();
+        } else {
+          music.play().catch(() => {});
+        }
+      });
       document.getElementById("calendar").onclick = (e) =>
         e.currentTarget.classList.add("open");
       function tick() {
